@@ -1,0 +1,17 @@
+<div class="p-4">
+  <h2 class="text-2xl font-bold mb-4">Todo List</h2>
+
+  <!-- Formulário para adicionar uma nova tarefa -->
+  <form (ngSubmit)="addTodo()">
+    <input type="text" placeholder="Nova tarefa" [(ngModel)]="newTodoTitle" name="newTodoTitle" class="border border-gray-400 px-4 py-2 mr-2">
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Incluir</button>
+  </form>
+
+  <!-- Lista de tarefas -->
+  <ul class="mt-4">
+    <li *ngFor="let todo of todos" class="flex items-center justify-between mb-2">
+      <span [ngClass]="{'line-through': todo.status=='done'}" (click)="toggleComplete(todo)" class="cursor-pointer">{{ todo.title }}</span>
+      <button (click)="deleteTodo(todo.id)" class="bg-red-500 text-white px-2 py-1 rounded">Apagar</button>
+    </li>
+  </ul>
+</div>

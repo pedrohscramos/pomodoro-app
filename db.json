@@ -1,0 +1,58 @@
+{
+  "columns": [
+    {
+      "title": "To do",
+      "id": 1,
+      "order": 3
+    },
+    {
+      "title": "In Progress",
+      "id": 2,
+      "order": 3
+    },
+    {
+      "title": "Done",
+      "id": 3,
+      "order": 3
+    },
+    {
+      "title": "Backlog",
+      "id": 4,
+      "order": 2
+    },
+    {
+      "title": "teste",
+      "order": 3,
+      "id": 5
+    }
+  ],
+  "tasks": [
+    {
+      "title": "nova tarefa de teste",
+      "status": "done",
+      "id": 1
+    },
+    {
+      "title": "la vai",
+      "status": "in-progress",
+      "id": 2
+    },
+    {
+      "title": "teste",
+      "status": "in-progress",
+      "id": 3
+    },
+    {
+      "title": "tarefa novo",
+      "status": "todo",
+      "color": "green",
+      "id": 4
+    },
+    {
+      "title": "Tarefa urgente",
+      "status": "in-progress",
+      "color": "red",
+      "id": 5
+    }
+  ]
+}

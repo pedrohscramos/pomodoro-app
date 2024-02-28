@@ -1,0 +1,26 @@
+<div class="flex">
+  <div class="kanban-board">
+    <div class="kanban-column" *ngFor="let column of columns" (drop)="onDrop($event, column.id)" (dragover)="onDragOver($event)" >
+      <h2 class="kanban-column-title">{{ column.title }}</h2>
+      <div *ngFor="let task of tasks | filterTasks:column.id" draggable="true" (dragstart)="onDragStart($event, task)"
+        (click)="showTaskDetails(task)" class="kanban-card" [style.background-color]="task.color">
+        {{ task.title }}
+      </div>
+    </div>
+
+
+  </div>
+  <div class="kanban-sidebar">
+    <form (submit)="addTask(newTaskTitle.value, selectedColor.value); newTaskTitle.value=''">
+      <input type="text" placeholder="Nova Tarefa" #newTaskTitle required class="kanban-input">
+      <select #selectedColor required class="kanban-select">
+        <option *ngFor="let color of availableColors" [value]="color">{{ color }}</option>
+      </select>
+      <button type="submit" class="kanban-btn">Adicionar</button>
+    </form>
+    <form (submit)="addColumn(newColumnTitle.value); newColumnTitle.value=''">
+      <input type="text" placeholder="Nova Coluna" #newColumnTitle required>
+      <button type="submit">Adicionar Coluna</button>
+    </form>
+  </div>
+</div>
